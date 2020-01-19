@@ -9,7 +9,10 @@ class SearchBar extends Component {
   }
   searchVideos = event => {
     event.preventDefault();
-    console.log(this.state.searchText);
+    const { searchText } = this.state;
+    if (searchText.trim().length > 0) {
+      this.props.onFormSubmit(searchText.trim());
+    }
   };
   render() {
     return (
