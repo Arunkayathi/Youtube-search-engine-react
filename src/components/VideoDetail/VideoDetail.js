@@ -1,9 +1,27 @@
-import React, { Component } from "react";
+import React from "react";
 
-class VideoDetail extends Component {
-  render() {
-    return <div></div>;
+const VideoDetail = ({
+  selectedVideo: {
+    snippet,
+    id: { videoId }
   }
-}
+}) => {
+  const publishedYear = new Date(snippet.publishedAt).getFullYear();
+  const url = `https://www.youtube.com/embed/${videoId}`;
+  if (!snippet) {
+    return <div> Loading.....</div>;
+  }
+  return (
+    <div>
+      <div className="ui embed">
+        <iframe src={url}></iframe>
+      </div>
+      <div className="ui segment">
+        <h4 className="ui header">{snippet.title}</h4>
+        <p>{snippet.description}</p>
+      </div>
+    </div>
+  );
+};
 
 export default VideoDetail;
