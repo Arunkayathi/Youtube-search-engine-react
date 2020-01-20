@@ -27,15 +27,24 @@ class App extends Component {
   };
   render() {
     return (
-      <div className="ui container margin-top">
+      <div className="ui custom-margin">
         <SearchBar onFormSubmit={this.onSearchTextSubmit} />
         {this.state.videos.length > 0 && (
           <React.Fragment>
-            <VideoDetail selectedVideo={this.state.selectedVideo} />
-            <VideoList
-              videos={this.state.videos}
-              onVideoSelect={this.onVideoSelect}
-            />
+            <div className="ui grid">
+              <div className="ui row">
+                <div className="eleven wide column">
+                  <VideoDetail selectedVideo={this.state.selectedVideo} />
+                </div>
+
+                <div className="five wide column">
+                  <VideoList
+                    videos={this.state.videos}
+                    onVideoSelect={this.onVideoSelect}
+                  />
+                </div>
+              </div>
+            </div>
           </React.Fragment>
         )}
       </div>

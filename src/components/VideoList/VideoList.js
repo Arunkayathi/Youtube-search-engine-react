@@ -12,7 +12,7 @@ const VideoList = ({ videos, onVideoSelect }) => {
     );
   });
   return (
-    <div className="ui card">
+    <div className="ui segment">
       <div className="ui relaxed divided list">{items.length > 0 && items}</div>
     </div>
   );

@@ -13,7 +13,7 @@ const VideoItem = ({ video, onEmitSelectedVideo }) => {
         src={video.snippet.thumbnails.high.url}
       />
       <div className="content">
-        <a className="header">{video.snippet.title}</a>
+        <h4 className="header">{video.snippet.title}</h4>
       </div>
     </div>
   );
